@@ -1,30 +1,21 @@
+---
+import ClaveSol from "./icons/ClaveSol.astro";
+---
+
 <section>
-    <div class="description"> 
-        <h1>Symphon.ia</h1>
+    <div class="description">
+        <ClaveSol fill="#020024" /><h1>ymphon.<strong class="ia-text">ia</strong></h1>
         <p>
-            Your ultimate tool for creating <strong
-                >unique melodies and rhythms with artificial intelligence</strong
-            >. Developed for the Vercel Hackathon 2024, this platform empowers
-            you to generate innovative and personalized music in seconds.
-            Discover the future of music creation with Symphon.ia.
+            Your ultimate tool for creating <strong>unique melodies and rhythms with artificial intelligence</strong>. 
+            Developed for the Vercel Hackathon 2024.
         </p>
         <button>Get Started</button>
     </div>
-    <div>
-        Aqui irian videos de gente tocando instrumentos y asi xd
-    </div>
+
+    <div>Aqui irian videos de gente tocando instrumentos y asi xd</div>
 </section>
 
 <style>
-    h1{
-        font-size: 5rem;
-        margin-bottom: 20px;
-    }center
-    p{
-        font-size: 1.5rem;
-        color: var(--khaki);
-        margin-top: 0;
-    }
     section {
         display: flex;
         flex-direction: row;
@@ -35,10 +26,77 @@
         height: 95vh;
     }
 
-    .description{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
+    .description {
+        display: grid;
+        grid-template-areas:
+            "note ."
+            "note title"
+            "note text"
+            "button button";
+
+        grid-template-columns: 0.35fr 2fr;
+        grid-template-rows: 0.2fr 0.5fr 0.25fr 0.25fr;
+    }
+
+    .ia-text{
+        color: #4c368d;
+        padding: 0;
+        margin: 0;
+    }
+
+    svg {
+        width: 8rem;
+        height: 20rem;
+        transform: skew(-12deg); 
+        grid-area: note;
+        fill: #4c368d;
+        animation: gradiant 5s infinite;
+        transition: fill 0.5s;
+    }
+
+
+    h1 {
+        font-size: 5rem;
+        grid-area: title;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 1rem;
+        width: 70%;
+        color: var(--khaki);
+        margin-top: 0;
+        grid-area: text;
+    }
+
+    button {
+        background-color: var(--black);
+        border: 2px solid var(--celeste);
+        color: var(--celeste);
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        grid-area: button;
+        grid-column: 1 / 2;
+    }
+
+    button:hover {
+        background-color: var(--celeste);
+        color: var(--black);
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+
+    @keyframes gradiant{
+        0%{
+            fill: #4c368d;
+        }
+        50%{
+            fill: #7654da;
+        }
+        100%{
+            fill: #4c368d;
+        }
     }
 </style>
