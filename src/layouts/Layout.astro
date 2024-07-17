@@ -1,6 +1,6 @@
 ---
 import "@fontsource-variable/nunito";
-import Note from "../components/icons/Note.astro";
+import AnimatedBackground from "../components/AnimatedBackground.astro";
 
 interface Props {
 	title: string;
@@ -20,29 +20,9 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Note class="note" />
+		<AnimatedBackground />
 		<slot />
-		<Note />
 	</body>
-	<script>
-		// const $body = document.querySelector("body");
-		// const symbols = ["♪", "♫", "♬", "🤖"];
-
-		// function createSymbol() {
-		// 	const symbol = document.createElement("svg");
-		// 	symbol.className = Math.random() < 0.5 ? "note" : "robot";
-		// 	symbol.innerText = symbols[Math.floor(Math.random() * symbols.length)];
-		// 	symbol.style.left = Math.random() * 95 + "vw";
-		// 	symbol.style.animationDuration = 3 + Math.random() * 10 + "s";
-		// 	$body.appendChild(symbol);
-
-		// 	symbol.addEventListener("animationend", () => {
-		// 		symbol.remove();
-		// 	});
-		// }
-
-		// setInterval(createSymbol, 3000);
-	</script>
 </html>
 <style is:global>
 	* {
@@ -57,7 +37,12 @@ const { title } = Astro.props;
 	}
 	html {
 		font-family: "Nunito Variable", sans-serif;
-		background: var(--black);
+		background: rgb(2, 0, 36);
+		background: radial-gradient(
+			circle,
+			rgba(2, 0, 36, 1) 0%,
+			rgba(7, 2, 13, 1) 46%
+		);
 	}
 	body {
 		margin: 0;
@@ -68,21 +53,5 @@ const { title } = Astro.props;
 		flex-direction: column;
 		align-items: center;
 		padding: 0px 50px;
-	}
-
-	.note,
-	.robot {
-		position: absolute;
-		top: 0px; /* Empieza fuera de la vista */
-		width: 40px; /* Ajusta el tamaño del SVG */
-		height: 40px;
-		animation: fall infinite linear 5s; /* Animación de caída */
-		z-index: -1;
-	}
-
-	@keyframes fall {
-		to {
-			transform: translateY(90vh); /* Termina en la parte inferior de la pantalla */
-		}
 	}
 </style>
