@@ -44,15 +44,7 @@ import ClaveSol from "./icons/ClaveSol.astro";
         margin: 0;
     }
 
-    svg {
-        width: 8rem;
-        height: 20rem;
-        transform: skew(-12deg); 
-        grid-area: note;
-        fill: #4c368d;
-        animation: gradiant 5s infinite;
-        transition: fill 0.5s;
-    }
+    
 
 
     h1 {
@@ -86,17 +78,5 @@ import ClaveSol from "./icons/ClaveSol.astro";
         color: var(--black);
         transform: scale(1.1);
         transition: all 0.5s;
-    }
-
-    @keyframes gradiant{
-        0%{
-            fill: #4c368d;
-        }
-        50%{
-            fill: #7654da;
-        }
-        100%{
-            fill: #4c368d;
-        }
     }
 </style>
