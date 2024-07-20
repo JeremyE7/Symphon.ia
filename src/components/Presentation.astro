@@ -21,6 +21,10 @@ import VercelSDK from "./icons/VercelSDK.astro";
     <div class="videos">
         <Videos />
     </div>
+
+    <footer>
+        Powered by <VercelSDK /> VERCEL AI SDK
+    </footer>
 </section>
 
 <style>
@@ -56,9 +60,6 @@ import VercelSDK from "./icons/VercelSDK.astro";
         margin: 0;
     }
 
-    
-
-
     h1 {
         font-size: 5rem;
         grid-area: title;
@@ -90,5 +91,28 @@ import VercelSDK from "./icons/VercelSDK.astro";
         color: var(--black);
         transform: scale(1.1);
         transition: all 0.5s;
+    }
+
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        color: rgb(255, 255, 255, 0.7);
+        font-size: 0.65rem;
+        position: absolute;
+        transition: color 0.5s;
+        bottom: 0;
+    }
+
+    footer svg {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    footer:hover {
+        color: rgb(255, 255, 255);
     }
 </style>
