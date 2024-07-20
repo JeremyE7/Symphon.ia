@@ -1,18 +1,26 @@
 ---
 import ClaveSol from "./icons/ClaveSol.astro";
+import Videos from "./Videos.astro";
+import VercelSDK from "./icons/VercelSDK.astro";
 ---
 
 <section>
     <div class="description">
-        <ClaveSol fill="#020024" /><h1>ymphon.<strong class="ia-text">ia</strong></h1>
+        <ClaveSol fill="#020024" /><h1>
+            ymphon.<strong class="ia-text">ia</strong>
+        </h1>
+
         <p>
-            Your ultimate tool for creating <strong>unique melodies and rhythms with artificial intelligence</strong>. 
-            Developed for the Vercel Hackathon 2024.
+            Your ultimate tool for creating <strong
+                >unique melodies and rhythms with artificial intelligence</strong
+            >. Developed for the Vercel Hackathon 2024.
         </p>
         <button>Get Started</button>
     </div>
 
-    <div>Aqui irian videos de gente tocando instrumentos y asi xd</div>
+    <div class="videos">
+        <Videos />
+    </div>
 </section>
 
 <style>
@@ -24,6 +32,10 @@ import ClaveSol from "./icons/ClaveSol.astro";
         color: var(--celeste);
         width: 1000px;
         height: 95vh;
+    }
+
+    .videos {
+        padding-left: 1rem;
     }
 
     .description {
@@ -38,7 +50,7 @@ import ClaveSol from "./icons/ClaveSol.astro";
         grid-template-rows: 0.2fr 0.5fr 0.25fr 0.25fr;
     }
 
-    .ia-text{
+    .ia-text {
         color: #4c368d;
         padding: 0;
         margin: 0;
