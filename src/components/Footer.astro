@@ -1,0 +1,32 @@
+---
+import VercelSDK from "./icons/VercelSDK.astro";
+---
+
+<footer>
+    Powered by <VercelSDK /> VERCEL AI SDK
+</footer>
+
+<style>
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 1rem;
+        color: rgb(255, 255, 255, 0.7);
+        font-size: 0.65rem;
+        transition: color 0.5s;
+        bottom: 0;
+        margin-top: 20px;
+    }
+
+    footer svg {
+        width: 1rem;
+        height: 1rem;
+        margin: 0 0.5rem;
+    }
+
+    footer:hover {
+        color: rgb(255, 255, 255);
+    }
+</style>
