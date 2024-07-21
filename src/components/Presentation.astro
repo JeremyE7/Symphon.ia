@@ -32,6 +32,7 @@ import VercelSDK from "./icons/VercelSDK.astro";
         color: var(--celeste);
         width: 1000px;
         height: 95vh;
+        animation: fadein 3s;
     }
 
     .videos {
@@ -91,5 +92,14 @@ import VercelSDK from "./icons/VercelSDK.astro";
         color: var(--black);
         transform: scale(1.1);
         transition: all 0.5s;
+    }
+
+    @keyframes fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
     }
 </style>
