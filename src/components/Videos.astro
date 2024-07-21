@@ -2,26 +2,26 @@
     <div class="container">
         <video muted autoplay="autoplay" loop>
             <source
-                src="https://media.istockphoto.com/id/1226196573/es/v%C3%ADdeo/productor-ingeniero-de-audio-utiliza-el-escritorio-de-control-para-la-grabaci%C3%B3n-de-nueva.mp4?s=mp4-640x640-is&k=20&c=zWhgv4ZtH_fQQH-CHNp5D2mRgRo6N8EuChZm_qSlpq8="
-                type="video/mp4"
+                src="video4.webm"
+                type="video/webm"
             />
         </video>
         <video muted autoplay="autoplay" loop>
             <source
-                src="https://videos.pexels.com/video-files/4699296/4699296-hd_1920_1080_30fps.mp4"
-                type="video/mp4"
+                src="video3.webm"
+                type="video/webm"
             />
         </video>
         <video muted autoplay="autoplay" loop>
             <source
-                src="https://cdn.pixabay.com/video/2016/04/03/2662-161442863_large.mp4"
-                type="video/mp4"
+                src="video2.webm"
+                type="video/webm"
             />
         </video>
         <video muted autoplay="autoplay" loop>
             <source
-                src="https://videos.pexels.com/video-files/5657831/5657831-uhd_2732_1440_25fps.mp4"
-                type="video/mp4"
+                src="video1.webm"
+                type="video/webm"
             />
         </video>
     </div>
@@ -44,11 +44,17 @@
         height: 100%;
         border-radius: 10px;
         object-fit: cover;
+        animation: fadeIn ease-out;
     }
 
     .container video:nth-child(1) {
         grid-column-start: 1;
         grid-column-end: 3;
+        animation-duration: 1s;
+    }
+
+    .container video:nth-child(2) {
+        animation-duration: 2s;
     }
 
     .container video:nth-child(3) {
@@ -56,6 +62,7 @@
         grid-column-end: -3;
         grid-row-start: 2;
         grid-row-end: 3;
+        animation-duration: 3s;
     }
 
     .container video:nth-child(4) {
@@ -63,5 +70,17 @@
         grid-column-end: -1;
         grid-row-start: 2;
         grid-row-end: 3;
+        animation-duration: 4s;
+    }
+
+    @keyframes fadeIn {
+        from {
+
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+        
     }
 </style>
