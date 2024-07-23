@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './FormMusic.module.css';
+import { playSound } from '../../utils/generateSound';
 
 export const FormMusic = () => {
+    const [sound, setSound] = useState(null);
 
     const handleSubmit = async (event) => {
         event.preventDefault(); // Previene la recarga de la página
@@ -20,8 +22,10 @@ export const FormMusic = () => {
                 body: JSON.stringify({ feeling, genre, instrument }),
             });
 
-            const result = await response.json();
-            console.log(result);
+            const result = await response.json()
+            console.log(result)
+            setSound(result)
+            playSound(result)
         } catch (error) {
             console.error('Error:', error);
         }
@@ -48,6 +52,9 @@ export const FormMusic = () => {
                     <input type="text" id="instrument" name="instrument" />
                     <button type="submit">Submit</button>
                 </form>
+                <div>
+                    {sound && <p>{sound.toString()}</p>}
+                </div>
             </section>
         </>
     );
