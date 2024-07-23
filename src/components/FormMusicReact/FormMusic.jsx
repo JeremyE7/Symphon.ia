@@ -6,12 +6,12 @@ export const FormMusic = () => {
     const [sound, setSound] = useState(null);
 
     const handleSubmit = async (event) => {
-        event.preventDefault(); // Previene la recarga de la página
+        event.preventDefault()
         
-        const formData = new FormData(event.target);
-        const feeling = formData.get('feeling');
-        const genre = formData.get('genre');
-        const instrument = formData.get('instrument');
+        const formData = new FormData(event.target)
+        const feeling = formData.get('feeling')
+        const genre = formData.get('genre')
+        const instrument = formData.get('instrument')
         
         try {
             const response = await fetch('/api/createSound', {

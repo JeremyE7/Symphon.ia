@@ -18,7 +18,7 @@ const chordNotesMap = {
 
 
 export const playSound = async (soundData) => {
-    await Tone.start() // Asegúrate de que el contexto de audio está iniciado
+    await Tone.start() 
 
     const synth = new Tone.PolySynth(Tone.Synth).toDestination()
     console.log(soundData)
@@ -27,14 +27,14 @@ export const playSound = async (soundData) => {
     soundData.forEach(({ chord, duration }) => {
         console.log(chord)
         console.log(duration)
-        // Verifica que `chord` y `duration` no sean undefined
+        
         if (!chord || !duration) {
             console.error('Invalid chord or duration:', { chord, duration });
             return
         }
         const notes = chordNotesMap[chord] ?? chord;
         console.log('Playing:', { notes, duration, time })
-        // // Reproduce el acorde con la duración especificada
+        
         synth.triggerAttackRelease(notes, duration, time)
         time += Tone.Time(duration).toSeconds()
     });
