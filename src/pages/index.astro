@@ -6,18 +6,23 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Symphon.ia">
 	<main>
-		<div id="background"></div>
 		<Presentation />
 		<FormMusic client:visible/>
 	</main>
 </Layout>
 
 <style>
-	main {
-		
-	}
 	h1 {
 		color: var(--celeste);
+	}
+
+	main{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		
 	}
 
 	

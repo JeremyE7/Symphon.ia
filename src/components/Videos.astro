@@ -35,7 +35,7 @@
         grid-row-gap: 10px;
         grid-template-rows: repeat(2, 1fr);
         align-items: center;
-        opacity: 0.4;
+        opacity: 0.8;
         z-index: -1;
     }
 
@@ -44,7 +44,6 @@
         height: 100%;
         border-radius: 10px;
         object-fit: cover;
-        animation: fadeIn ease-out;
     }
 
     .container video:nth-child(1) {
@@ -82,5 +81,11 @@
             opacity: 1;
         }
         
+    }
+
+    @media (max-width: 880px) {
+        .container{
+           display: none;
+        }
     }
 </style>

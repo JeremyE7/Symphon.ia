@@ -6,7 +6,7 @@ import VercelSDK from "./icons/VercelSDK.astro";
 
 <section>
     <div class="description">
-        <ClaveSol fill="#020024" /><h1>
+        <img src="TrebleClef.png" class="sunChord"/><h1>
             ymphon.<strong class="ia-text">ia</strong>
         </h1>
 
@@ -33,6 +33,7 @@ import VercelSDK from "./icons/VercelSDK.astro";
         width: 1000px;
         height: 95vh;
         animation: fadein 3s;
+        margin-top: 20px;
     }
 
     .videos {
@@ -48,9 +49,18 @@ import VercelSDK from "./icons/VercelSDK.astro";
             "button button";
 
         grid-template-columns: 0.35fr 2fr;
-        grid-template-rows: 0.2fr 0.5fr 0.25fr 0.25fr;
+        grid-template-rows: 0.2fr 0.5fr 0.5fr 0.25fr;
         width: 400px;
         z-index: 1;
+        gap: 10px;
+    }
+
+    .sunChord {
+        grid-area: note;
+        width: 150px;
+        height: 300px;
+        margin: 0;
+        animation: jump 5s infinite;
     }
 
     .ia-text {
@@ -60,7 +70,7 @@ import VercelSDK from "./icons/VercelSDK.astro";
     }
 
     h1 {
-        font-size: 5rem;
+        font-size: 6rem;
         grid-area: title;
         margin-bottom: 0;
     }
@@ -86,7 +96,7 @@ import VercelSDK from "./icons/VercelSDK.astro";
         text-decoration: none;
         text-align: center;
         transition: all 0.5s;
-
+        margin-top: -20px;
     }
 
     a:hover {
@@ -101,6 +111,84 @@ import VercelSDK from "./icons/VercelSDK.astro";
         }
         to {
             opacity: 1;
+        }
+    }
+
+    @keyframes jump {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 1020px) {
+        section{
+            width: 100%;
+            
+        }
+    }
+
+    @media (max-width: 880px) {
+        .description{
+            width: 100%;
+        }
+        .videos{
+            display: none;
+        }
+    }
+
+    @media (max-width: 680px) {
+
+        h1 {
+            font-size: 4rem;
+        }
+
+        p {
+            font-size: 0.8rem;
+        }
+
+        a {
+            font-size: 0.8rem;
+        }
+
+        .sunChord{
+            width: 100px;
+            height: 200px;
+        }
+        
+        .description{
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 523px) {
+
+        .description{
+            width: 80%;
+            grid-area: auto;
+        }
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 0.6rem;
+            width: 100%;
+            text-wrap: wrap;
+        }
+
+        a {
+            font-size: 0.6rem;
+        }
+
+        .sunChord{
+            width: 80px;
+            height: 160px;
         }
     }
 </style>
