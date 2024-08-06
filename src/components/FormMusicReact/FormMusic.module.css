@@ -167,12 +167,8 @@
     }
 
     @media (max-width: 1200px) {
-        .line{
-            left: 200px;
-        }
         .lines{
-            top: 70px;
-            height: 300px;
+            display: none;
         }
     }
 
