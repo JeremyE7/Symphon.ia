@@ -135,7 +135,7 @@
         animation-delay: 4s;
     }
 
-    .music{
+    .music {
         margin-top: 40px;
         width: 100%;
         height: 100%;
@@ -145,9 +145,43 @@
         justify-content: space-around;
     }
 
-    .musicPlayer{
+    .musicPlayer {
         width: 200px;
         height: 100px;
+    }
+
+    .loader {
+        width: 45px;
+        aspect-ratio: 1;
+        --c: no-repeat linear-gradient(#fff 0 0);
+        background:
+            var(--c) 0% 50%,
+            var(--c) 50% 50%,
+            var(--c) 100% 50%;
+        background-size: 20% 100%;
+        animation: l1 1s infinite linear;
+    }
+
+    @keyframes l1 {
+        0% {
+            background-size: 20% 100%, 20% 100%, 20% 100%
+        }
+
+        33% {
+            background-size: 20% 10%, 20% 100%, 20% 100%
+        }
+
+        50% {
+            background-size: 20% 100%, 20% 10%, 20% 100%
+        }
+
+        66% {
+            background-size: 20% 100%, 20% 100%, 20% 10%
+        }
+
+        100% {
+            background-size: 20% 100%, 20% 100%, 20% 100%
+        }
     }
 
     @keyframes drop {
@@ -161,25 +195,25 @@
     }
 
     @media (max-width: 1040px) {
-        .sectionFormMusic{
+        .sectionFormMusic {
             width: 100%;
         }
     }
 
     @media (max-width: 1200px) {
-        .lines{
+        .lines {
             display: none;
         }
     }
 
     @media (max-width: 880px) {
-        .description{
+        .description {
             width: 100%;
         }
     }
 
     @media (max-width: 523px) {
-        .lines{
+        .lines {
             display: none;
         }
     }

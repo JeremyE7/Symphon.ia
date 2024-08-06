@@ -15,6 +15,8 @@ const model = google('models/gemini-1.5-pro-latest')
 export const prerender = false
 
 export const POST: APIRoute = async ({ request }) => {
+  console.log("Dawdawd")
+
 
   if (!request.body) {
     return new Response(
@@ -31,19 +33,34 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const body: SoundPrompt = await request.json()
-  const bodyParsed = `${body.feeling}, ${body.genre}, ${body.instrument}`
+  const bodyParsed = `${body.feeling}`
 
-  const { text } = await generateText({
-    model: model,
-    prompt: bodyParsed,
-    system: prompt
-  })
+  try {
+    const { text } = await generateText({
+      model: model,
+      prompt: bodyParsed,
+      system: prompt,
+      headers: {
+        'Content-Type': 'application/json',
+      }
 
-  const resultFormatted = JSON.parse(text.replace(/^```json\n/, '').replace(/\n```$/, '')) as Sound
+    })
 
-  return new Response(
-    JSON.stringify(resultFormatted),
-    { status: 200, headers: { 'Content-Type': 'application/json' } }
-  )
+    console.log(text)
+
+    return new Response(
+      JSON.stringify(text),
+      { status: 200, headers: { 'Content-Type': 'application/json' } }
+    )
+  }
+  catch(e) {
+    console.log("Error", e)
+    return new Response(
+      JSON.stringify({ error: 'Error' }),
+      { status: 400, headers: { 'Content-Type': 'application/json' } }
+    )
+  }
+
+
 
 }
